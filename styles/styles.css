@@ -601,4 +601,8 @@ h4 {
   row-gap: 30px;
   min-height: 80vh;
 }
+
+.section {
+  padding-block: var(--section-padding-y);
+}
 /*# sourceMappingURL=styles.css.map */
