@@ -1,3 +1,7 @@
 .section{
     padding-block: var(--section-padding-y);
+
+    &--hiden-x{
+        overflow-x: hidden;
+    }
 }
