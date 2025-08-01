@@ -19,7 +19,7 @@
     }
 
     &__body{
-        max-width: 530px;
+        max-width: 531px;
         display: flex;
         flex-direction: column;
         row-gap: 35px;
@@ -55,8 +55,8 @@
     }
 
 
-    &__partners{
-        &-list{
+    &__partners {
+        &-list {
             display: flex;
             justify-content: space-between;
             column-gap: 37px;
@@ -71,8 +71,8 @@
                 --heroPartnersWidthOffsetX: 60px;
 
                 column-gap: 0;
-                width: calc(100vw + var(--heroPartnersWidthOffsetX) *2);
-                margin-left: calc((var(--heroPartnersWidthOffsetX) + var(--container-padding-x)) * -1);
+                 width: calc(100vw + var(--heroPartnersWidthOffsetX) *2);
+                 margin-left: calc((var(--heroPartnersWidthOffsetX) + var(--container-padding-x)) * -1);
             }
     } 
     
