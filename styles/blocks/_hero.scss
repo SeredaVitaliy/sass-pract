@@ -29,6 +29,7 @@
           display: contents;  
         }
     }
+
     &__title{
         @include mobile{
             order: -2;
@@ -64,8 +65,9 @@
             @include tablet{
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                column-gap: 20px;
+                row-gap: 20px;
 
+                overflow-x: hidden;
             }
 
             @include mobile-s{
@@ -73,9 +75,11 @@
 
                 column-gap: 0;
                  width: calc(100vw + var(--heroPartnersWidthOffsetX) *2);
-                 margin-left: calc((var(--heroPartnersWidthOffsetX) + var(--container-padding-x)) * -1);
+                 margin-left: calc(
+                    (var(--heroPartnersWidthOffsetX) + var(--container-padding-x)) 
+                    * -1);
             }
-    } 
+        }
     
         &-item{
             @include tablet{
