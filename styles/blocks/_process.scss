@@ -6,10 +6,20 @@
      
      counter-reset: custom-counter;  // Сброс счетчика для нумерации элементов списка
      list-style: none; // Убираем стандартные маркеры списка
+
+     @include mobile{
+        row-gap: 20px;
+     }
     }
     
     &__item{
+        --counterContent: counter(custom-counter); 
+
         counter-increment: custom-counter; 
+
+        &:nth-child(-n+9){
+           --counterContent: '0' counter(custom-counter); // Сброс счетчика для первых 9 элементов, чтобы если будет больше 9, то не будет 010, 011 и т.д.
+        }
     }
 
     &__accordion{
@@ -27,6 +37,10 @@
             background-color: var(--color-accent);
         }
 
+        @include mobile{
+            padding: 30px;
+        }
+
         &[open]{
             --indicatorVerticalRotate: 0deg;
 
@@ -42,29 +56,48 @@
             column-gap: 50px;
             cursor: pointer;
             user-select: none; //чтобы при двойном клике не выделялся текст
+
+            @include mobile{
+                column-gap: 28px;
+            }
         }
 
         &-title{
+            @include fluid-text(30, 18); // Устанавливаем адаптивный размер шрифта
+
             display: flex;
             align-items: center;
             column-gap: 25px;
+
+            @include mobile{
+                column-gap: 33px;
+            }
             
             
             &::before{
-                content: '0' counter(custom-counter);
+                content: var(--counterContent);
                 font-size: 2em;
+
+                @include mobile{
+                    font-size: 30px;
+                }
             }
         }
 
         &-indicator{
          @include flex-center;
          @include square(58px); 
+
+         flex-shrink: 0; // для того, чтобы индикатор не сжимался при изменении размера экрана
          
          position: relative;
          background-color: var(--color-gray);
          border: var(--border);
          border-radius: 50%;
 
+         @include mobile{
+            width: 30px;
+         }
 
          &::before,
          &::after {
