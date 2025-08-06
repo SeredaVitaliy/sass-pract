@@ -27,4 +27,14 @@
             --gridColums: 1;
         }
     }
+
+    &--3{
+        @include desktop{
+            --gridColums: 2;
+        }
+        
+        @include mobile{
+            --gridColums: 1;
+        }
+    }
 }
