@@ -9,15 +9,31 @@
     border-radius: var(--border-radius-large);
     overflow-x: hidden;
 
+    @include tablet{
+        padding: 30px 30px 46px;
+        row-gap: 46px;
+    }
+
     &__slider{
         --reviewsSliderSlideWidth: 606px; //ширина одного блока
+
+        @include tablet{
+        --reviewsSliderSlideWidth: 330px;
+        }
 
         &-list{
             display: flex;
             column-gap: 50px;
             scroll-snap-type: x mandatory; //создание слайдера
             overflow-x: scroll;
-            margin-left: calc(var(--reviewsSliderSlideWidth) / 2 * -1); //смещаем в обратную сторону на значение, равное половине ширины слайда 
+            
+            @include tablet-above{
+                margin-left: calc(var(--reviewsSliderSlideWidth) / 2 * -1); //смещаем в обратную сторону на значение, равное половине ширины слайда     
+            }
+
+            @include tablet{
+              column-gap: 30px;  
+            }
         }
 
         &-item{
